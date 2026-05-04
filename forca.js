@@ -14,7 +14,7 @@ const sortearPalavra = listaPalavras => {
      return listaPalavras[numSorteio]
 }
 let palavraSorteada = ""
-
+let acertos = 0;
 btnComecar.addEventListener("click", () => {
     palavraSorteada  = sortearPalavra(palavras)
     // preciso criar o tabuleiro com a qtd de letras da palavraSorteada
@@ -23,17 +23,20 @@ btnComecar.addEventListener("click", () => {
     console.log(palavraSorteada)
     
 })
+
 const btnJogar = document.querySelector("#jogar")
 btnJogar.addEventListener("click", () => {
-    const letra = document.querySelector("#entrada").value.toUpperCase()
+    const input = document.querySelector("#entrada")
+    const letra = input.value.toUpperCase()
     const liDoDOM = document.querySelectorAll(".tentativas li")
 
-    let acertou = false
+    let acertou = false;
 
     for (let i = 0; i < palavraSorteada.length; i++) {
-        if (palavraSorteada[i].toUpperCase() === letra) {
-            liDoDOM[i].innerHTML = letra
-            acertou = true
+        if (palavraSorteada[i].toUpperCase() === letra && liDoDOM[i].innerHTML === "") {
+            liDoDOM[i].innerHTML = letra;
+            acertou = true;
+            acertos++;
         }
     }
 
@@ -45,6 +48,10 @@ btnJogar.addEventListener("click", () => {
             alert("Você perdeu! A palavra era: " + palavraSorteada)
         }
     }
+    if(acertos === palavraSorteada.length){
+        alert("Parabéns, você venceu!")
+    }
+    input.value = ""
 })
 let erros = -1
 const partes = [".cabeca", ".corpo", ".braco-esq", ".braco-dir", ".perna-esq", ".perna-dir"]
