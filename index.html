@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="palavras.js" defer></script>
+    <script src="forca.js" defer></script>
+    <style>
+        .tentativas {
+            list-style: none;
+            display: flex;
+            gap: 5px;
+            font-size: 2em;
+        }
+
+        .tentativas li {
+            border-bottom: 1px solid #000;
+            padding: 0 30px;
+        }
+
+        input {
+            text-transform: uppercase;
+        }
+
+        .forca {
+            position: relative;
+            width: 200px;
+            height: 250px;
+            margin: 20px auto;
+        }
+
+        .base {
+            width: 100px;
+            height: 5px;
+            background: black;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .poste {
+            width: 5px;
+            height: 250px;
+            background: black;
+            position: absolute;
+            left: 50px;
+            bottom: 0;
+        }
+
+        .topo {
+            width: 80px;
+            height: 5px;
+            background: black;
+            position: absolute;
+            top: 0;
+            left: 50px;
+        }
+
+        .corda {
+            width: 5px;
+            height: 30px;
+            background: black;
+            position: absolute;
+            top: 5px;
+            left: 125px;
+        }
+
+        .cabeca {
+            width: 30px;
+            height: 30px;
+            border: 3px solid black;
+            border-radius: 50%;
+            position: absolute;
+            top: 35px;
+            left: 110px;
+            display: none;
+        }
+
+        .corpo {
+            width: 3px;
+            height: 47px;
+            background: black;
+            position: absolute;
+            top: 68px;
+            left: 125px;
+            display: none;
+        }
+
+        .braco-esq {
+            width: 30px;
+            height: 3px;
+            background: black;
+            position: absolute;
+            top: 80px;
+            left: 98px;
+            transform: rotate(-30deg);
+            display: none;
+        }
+
+        .braco-dir {
+            width: 30px;
+            height: 3px;
+            background: black;
+            position: absolute;
+            top: 80px;
+            left: 125px;
+            transform: rotate(30deg);
+            display: none;
+        }
+
+        .perna-esq {
+            width: 30px;
+            height: 3px;
+            background: black;
+            position: absolute;
+            top: 120px;
+            left: 98px;
+            transform: rotate(-30deg);
+            display: none;
+        }
+
+        .perna-dir {
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            position: absolute;
+            top: 120px;
+            left: 125px;
+            transform: rotate(30deg);
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jogo da Forca</h1>
+    <button id="comecar">Começar</button>
+    <div class="bonequinho">
+
+    </div>
+    <div class="forca">
+
+        <ul class="tentativas">
+
+        </ul>
+    </div>
+
+    <div class="tabuleiro">
+        <input type="text" id="entrada" maxlength="1">
+        <button id="jogar">Tentar</button>
+    </div>
+    <div class="forca">
+        <div class="base"></div>
+        <div class="poste"></div>
+        <div class="topo"></div>
+        <div class="corda"></div>
+
+        <div class="cabeca"></div>
+        <div class="corpo"></div>
+        <div class="braco-esq"></div>
+        <div class="braco-dir"></div>
+        <div class="perna-esq"></div>
+        <div class="perna-dir"></div>
+    </div>
+</body>
+
+</html>
