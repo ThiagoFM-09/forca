@@ -57,6 +57,6 @@ let erros = -1
 const partes = [".cabeca", ".corpo", ".braco-esq", ".braco-dir", ".perna-esq", ".perna-dir"]
 
 const mostrarParte = () => {
-    if(erros < partes.length)
+    if(erros <= partes.length)
         document.querySelector(partes[erros]).style.display = "block"
 }
