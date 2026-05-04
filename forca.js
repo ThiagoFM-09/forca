@@ -44,7 +44,7 @@ btnJogar.addEventListener("click", () => {
         erros++
         mostrarParte()
 
-        if (erros === partes.length) {
+        if (erros === partes.length+1) {
             alert("Você perdeu! A palavra era: " + palavraSorteada)
         }
     }
